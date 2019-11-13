@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=test.c
+SOURCEFILES_QUOTED_IF_SPACED=_TLCD_.c _LED_.c main.c _COMMON_.c _BUTTON_.c _LCD_.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/test.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/test.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_TLCD_.o ${OBJECTDIR}/_LED_.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_COMMON_.o ${OBJECTDIR}/_BUTTON_.o ${OBJECTDIR}/_LCD_.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_TLCD_.o.d ${OBJECTDIR}/_LED_.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/_COMMON_.o.d ${OBJECTDIR}/_BUTTON_.o.d ${OBJECTDIR}/_LCD_.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/test.o
+OBJECTFILES=${OBJECTDIR}/_TLCD_.o ${OBJECTDIR}/_LED_.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_COMMON_.o ${OBJECTDIR}/_BUTTON_.o ${OBJECTDIR}/_LCD_.o
 
 # Source Files
-SOURCEFILES=test.c
+SOURCEFILES=_TLCD_.c _LED_.c main.c _COMMON_.c _BUTTON_.c _LCD_.c
 
 
 
@@ -95,20 +95,90 @@ MP_LINKER_FILE_OPTION=,--script="hid_boot_p33EP256MU806.gld"
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/test.o: test.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_TLCD_.o: _TLCD_.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/test.o.d 
-	@${RM} ${OBJECTDIR}/test.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  test.c  -o ${OBJECTDIR}/test.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/test.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
-	@${FIXDEPS} "${OBJECTDIR}/test.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	@${RM} ${OBJECTDIR}/_TLCD_.o.d 
+	@${RM} ${OBJECTDIR}/_TLCD_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _TLCD_.c  -o ${OBJECTDIR}/_TLCD_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_TLCD_.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_TLCD_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/_LED_.o: _LED_.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/_LED_.o.d 
+	@${RM} ${OBJECTDIR}/_LED_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _LED_.c  -o ${OBJECTDIR}/_LED_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_LED_.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_LED_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/_COMMON_.o: _COMMON_.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/_COMMON_.o.d 
+	@${RM} ${OBJECTDIR}/_COMMON_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _COMMON_.c  -o ${OBJECTDIR}/_COMMON_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_COMMON_.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_COMMON_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/_BUTTON_.o: _BUTTON_.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/_BUTTON_.o.d 
+	@${RM} ${OBJECTDIR}/_BUTTON_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _BUTTON_.c  -o ${OBJECTDIR}/_BUTTON_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_BUTTON_.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_BUTTON_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/_LCD_.o: _LCD_.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/_LCD_.o.d 
+	@${RM} ${OBJECTDIR}/_LCD_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _LCD_.c  -o ${OBJECTDIR}/_LCD_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_LCD_.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_LCD_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 else
-${OBJECTDIR}/test.o: test.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_TLCD_.o: _TLCD_.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/test.o.d 
-	@${RM} ${OBJECTDIR}/test.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  test.c  -o ${OBJECTDIR}/test.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/test.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
-	@${FIXDEPS} "${OBJECTDIR}/test.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	@${RM} ${OBJECTDIR}/_TLCD_.o.d 
+	@${RM} ${OBJECTDIR}/_TLCD_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _TLCD_.c  -o ${OBJECTDIR}/_TLCD_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_TLCD_.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_TLCD_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/_LED_.o: _LED_.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/_LED_.o.d 
+	@${RM} ${OBJECTDIR}/_LED_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _LED_.c  -o ${OBJECTDIR}/_LED_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_LED_.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_LED_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/_COMMON_.o: _COMMON_.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/_COMMON_.o.d 
+	@${RM} ${OBJECTDIR}/_COMMON_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _COMMON_.c  -o ${OBJECTDIR}/_COMMON_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_COMMON_.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_COMMON_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/_BUTTON_.o: _BUTTON_.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/_BUTTON_.o.d 
+	@${RM} ${OBJECTDIR}/_BUTTON_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _BUTTON_.c  -o ${OBJECTDIR}/_BUTTON_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_BUTTON_.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_BUTTON_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/_LCD_.o: _LCD_.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/_LCD_.o.d 
+	@${RM} ${OBJECTDIR}/_LCD_.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  _LCD_.c  -o ${OBJECTDIR}/_LCD_.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_LCD_.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/_LCD_.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

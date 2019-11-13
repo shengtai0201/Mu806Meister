@@ -37,6 +37,7 @@
 OUTPUT_ARCH("33EP256MU806")
 CRT0_STARTUP(crt0_extendedep.o)
 CRT1_STARTUP(crt1_extendedep.o)
+CRT_STARTMODE(crt_start_mode_normal.o)
 
 OPTIONAL(-lp33EP256MU806)
 OPTIONAL(-lfx)
