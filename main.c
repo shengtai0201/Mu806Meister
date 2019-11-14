@@ -127,7 +127,8 @@ void test4_1() {
         bright(i);
     }
 
-    display_int_lcd(3, 1, student_id);
+    lcd_index = 3;
+    display_int_lcd(lcd_index, 1, student_id);
 }
 
 void test4_2() {
@@ -138,7 +139,7 @@ void test4_2() {
             dark(i);
         }
 
-        Delay(100);
+        Delay(200);
         while (PORTGbits.RG8 == 0);
     }
 }
@@ -154,7 +155,7 @@ void test4_3() {
 
         display_int_lcd(lcd_index, 1, student_id);
 
-        Delay(100);
+        Delay(200);
         while (PORTGbits.RG7 == 0);
     }
 }
@@ -170,18 +171,16 @@ void test4_4() {
 
         display_int_lcd(lcd_index, 1, student_id);
 
-        Delay(100);
+        Delay(200);
         while (PORTGbits.RG6 == 0);
     }
 }
 
 void test4_5() {
     if (PORTGbits.RG9 == 0 && PORTDbits.RD10 == 0) {
-        student_id = 3;
+        display_string_lcd(0, 1, "3");
 
-        display_int_lcd(lcd_index, 1, student_id);
-
-        Delay(100);
+        Delay(200);
         while (PORTGbits.RG9 == 0 && PORTDbits.RD10 == 0);
     }
 }
