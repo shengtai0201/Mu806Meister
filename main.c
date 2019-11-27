@@ -123,55 +123,53 @@ unsigned int student_id = 02;
 void test4_1() {
     int i;
     for (i = 0; i < 10; i++) {
-        Delay(200);
+        Delay(150);
         bright(i);
     }
 
     lcd_index = 3;
-    display_int_lcd(lcd_index, 1, student_id);
+    display_int_lcd(lcd_index, 1, student_id, 2);
 }
 
 void test4_2() {
     if (PORTGbits.RG8 == 0) {
         int i;
         for (i = 0; i < 10; i++) {
-            Delay(200);
+            Delay(150);
             dark(i);
         }
 
-        Delay(200);
+        Delay(150);
         while (PORTGbits.RG8 == 0);
     }
 }
 
 void test4_3() {
     if (PORTGbits.RG7 == 0) {
-        unsigned int tmp = student_id;
-        if ((tmp += 3) < 100)
-            student_id = tmp;
+        unsigned int tmp_id = student_id, tmp_index = lcd_index;
+        if ((tmp_id += 3) < 100 && (tmp_index += 1) < 6) {
+            student_id = tmp_id;
+            lcd_index = tmp_index;
 
-        if (lcd_index < 6)
-            lcd_index++;
+            display_int_lcd(lcd_index, 1, student_id, 2);
+        }
 
-        display_int_lcd(lcd_index, 1, student_id);
-
-        Delay(200);
+        Delay(150);
         while (PORTGbits.RG7 == 0);
     }
 }
 
 void test4_4() {
     if (PORTGbits.RG6 == 0) {
-        unsigned int tmp = student_id;
-        if ((tmp -= 4) > 0)
-            student_id = tmp;
+        unsigned int tmp_id = student_id, tmp_index = lcd_index;
+        if ((tmp_id -= 4) > 0 && (tmp_index -= 1) > 0) {
+            student_id = tmp_id;
+            lcd_index = tmp_index;
 
-        if (lcd_index > 0)
-            lcd_index--;
+            display_int_lcd(lcd_index, 1, student_id, 2);
+        }
 
-        display_int_lcd(lcd_index, 1, student_id);
-
-        Delay(200);
+        Delay(150);
         while (PORTGbits.RG6 == 0);
     }
 }
@@ -180,7 +178,7 @@ void test4_5() {
     if (PORTGbits.RG9 == 0 && PORTDbits.RD10 == 0) {
         display_string_lcd(0, 1, "3");
 
-        Delay(200);
+        Delay(150);
         while (PORTGbits.RG9 == 0 && PORTDbits.RD10 == 0);
     }
 }
